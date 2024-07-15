@@ -1,38 +1,137 @@
-.App {
+.app {
+  font-family: Arial, sans-serif;
   text-align: center;
+  padding: 20px;
+  position: relative;
+}
+.container-group {
+  display: flex;
+  flex-direction: column; /* Stack containers vertically */
+  margin-top: 20px; /* Add margin between container groups */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.box {
+  border-radius: 10px;
+  background-color: #c5ccf7;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: calc(100% - 20px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.progress {
+  margin-bottom: 10px;
+}
+
+.progress-circle {
+  display: block;
+}
+
+.progress-circle-bg {
+  fill: none;
+  stroke: #f0f0f0;
+}
+
+.progress-circle-progress {
+  fill: none;
+  stroke: #4caf50;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-circle-text {
+  font-size: 14px;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.status {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.status.pass {
+  color: green;
+}
+
+.status.fail {
+  color: red;
+}
+
+.log {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.log:hover {
+  color: darkblue;
+}
+/* Sidebar Styles */
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: -300px; /* Start off screen */
+  width: 300px;
+  height: 100%;
+  background-color: #cad1e0; /* Similar complementary color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-content {
+  padding: 20px;
+  max-height: 100%; /* Limit height to sidebar height */
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333; /* Adjust title color as needed */
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #888;
+}
+
+.close-btn:hover {
+  color: #333;
 }
