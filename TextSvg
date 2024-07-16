@@ -1,0 +1,45 @@
+// src/LoadingLogo.js
+import React from 'react';
+
+const LoadingLogo = () => {
+  return (
+    <svg
+      width="100"
+      height="100"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke="#000"
+      strokeWidth="4"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="45"
+        strokeDasharray="283"
+        strokeDashoffset="75"
+        strokeLinecap="round"
+        style={{
+          animation: 'spin 2s linear infinite',
+        }}
+      />
+      <style>
+        {`
+          @keyframes spin {
+            0% {
+              stroke-dashoffset: 283;
+            }
+            75% {
+              stroke-dashoffset: 75;
+            }
+            100% {
+              stroke-dashoffset: 283;
+            }
+          }
+        `}
+      </style>
+    </svg>
+  );
+};
+
+export default LoadingLogo;
